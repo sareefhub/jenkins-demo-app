@@ -2,13 +2,13 @@ pipeline {
     agent {
         docker {
             image 'docker:20.10.7'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
+            args '-v /var/run/docker.sock:/var/run/docker.sock --user root'
         }
     }
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/<username>/jenkins-demo-app.git'
+                git branch: 'main', url: 'https://github.com/sareefhub/jenkins-demo-app/branches'
             }
         }
         stage('Build Image') {
