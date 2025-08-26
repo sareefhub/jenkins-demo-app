@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/sareefhub/jenkins-demo-app/branches'
+                git branch: 'main', url: 'https://github.com/sareefhub/jenkins-demo-app.git'
             }
         }
         stage('Build Image') {
